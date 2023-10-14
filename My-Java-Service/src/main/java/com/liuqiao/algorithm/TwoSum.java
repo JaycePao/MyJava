@@ -1,4 +1,4 @@
-package com.liuqiao.demo.algorithm;
+package com.liuqiao.algorithm;
 
 public class TwoSum {
     public static void main(String[] args) {

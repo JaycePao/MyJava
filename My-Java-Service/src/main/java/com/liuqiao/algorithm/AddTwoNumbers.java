@@ -1,4 +1,4 @@
-package com.liuqiao.demo.algorithm;
+package com.liuqiao.algorithm;
 
 class Solution {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {

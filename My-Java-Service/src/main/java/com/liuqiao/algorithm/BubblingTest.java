@@ -1,4 +1,4 @@
-package com.liuqiao.demo.algorithm;
+package com.liuqiao.algorithm;
 
 /**
  * 冒泡排序算法

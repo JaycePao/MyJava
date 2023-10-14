@@ -1,4 +1,4 @@
-package com.liuqiao.demo.algorithm.doublyLinkedList;
+package com.liuqiao.algorithm.doublyLinkedList;
 
 /**
  * @author wutao

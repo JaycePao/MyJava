@@ -1,4 +1,4 @@
-package com.liuqiao.demo.algorithm;
+package com.liuqiao.algorithm;
 
 import java.util.ArrayList;
 import java.util.List;
