@@ -23,8 +23,8 @@ package com.liuqiao.algorithm;
  * @author wutao
  * @since  2023-04-08
  */
-public class Solution1 {
-    public int lengthOfLongestSubstring(String s) {
+public class LengthOfLongestSubstring {
+    public static int lengthOfLongestSubstring(String s) {
         // 记录字符上一次出现的位置
         int[] last = new int[128];
         for(int i = 0; i < 128; i++) {
@@ -42,5 +42,10 @@ public class Solution1 {
         }
 
         return res;
+    }
+
+    public static void main(String[] args) {
+        int result = lengthOfLongestSubstring("abcabc");
+        System.out.println(result);
     }
 }
