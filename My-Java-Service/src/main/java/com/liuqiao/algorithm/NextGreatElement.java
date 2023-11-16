@@ -10,20 +10,21 @@ import java.util.Stack;
  */
 public class NextGreatElement {
     public static int[] solution(int[] findNums, int[] allNums) {
-        if(findNums == null || allNums==null || findNums.length==0 || allNums.length==0) {
+        if(findNums == null || findNums.length == 0 || allNums == null || allNums.length == 0) {
             return new int[]{};
         }
+
         int[] result = new int[findNums.length];
-        Map<Integer, Integer> map = new HashMap<>();
         Stack<Integer> stack = new Stack<>();
-        for (int i=0; i< allNums.length; i++) {
-            if (!stack.empty() && allNums[i] > stack.peek()) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i=0; i<allNums.length; i++) {
+            while(!stack.empty() && allNums[i] > stack.peek()) {
                 map.put(stack.pop(), allNums[i]);
             }
             stack.push(allNums[i]);
         }
 
-        for (int j=0; j<findNums.length; j++) {
+        for(int j=0; j<findNums.length; j++) {
             result[j] = map.getOrDefault(findNums[j], -1);
         }
 
@@ -31,6 +32,6 @@ public class NextGreatElement {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(solution(new int[]{2, 3}, new int[]{1, 2, 3, 4, 5})));
+        System.out.println(Arrays.toString(solution(new int[]{2, 3}, new int[]{1, 2, 3, 4})));
     }
 }

@@ -10,17 +10,17 @@ import java.util.Map;
 public class TwoSum {
     public static int[] solution(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
-        for (int i=0;i<nums.length;i++) {
-            int complement = target - nums[i];
-            if(map.containsKey(complement)) {
-                return new int[]{map.get(complement), i};
+        for (int I =0; I< nums.length; I++) {
+            int complement = target - nums[I];
+            if (map.containsKey(complement)) {
+                return new int[]{map.get(complement), I};
             }
-            map.put(nums[i], i);
+            map.put(nums[I], I);
         }
         return null;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         System.out.println(Arrays.toString(solution(new int[]{1, 2, 3, 4}, 7)));
     }
 }
