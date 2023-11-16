@@ -19,9 +19,12 @@ public class NextGreatElement {
         Stack<Integer> stack = new Stack<>();
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++){
+            // 如果当前元素大于栈顶的元素
             while (!stack.empty() && nums[i] > stack.peek()){
+                // 剔除栈顶元素，并将改元素放入map中，以栈顶的元素以及当前元素作为k&v
                 map.put(stack.pop(), nums[i]);
             }
+            // 把大数组的元素放入栈中
             stack.push(nums[i]);
         }
 
