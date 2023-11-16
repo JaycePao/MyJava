@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class TwoSum {
 
-    public static int[] solution(int[] nums, int target) throws IllegalAccessException {
+    public static int[] solution(int[] nums, int target) {
         Map<Integer,Integer> map = new HashMap<>();
         for (int i=0;  i<nums.length; i++) {
             int complement = target - nums[i];
@@ -18,10 +18,11 @@ public class TwoSum {
             }
             map.put(nums[i], i);
         }
-        throw new IllegalAccessException("");
+
+        return null;
     }
 
-    public static void main(String[] args) throws IllegalAccessException {
+    public static void main(String[] args) {
         int[] nums = new int[]{1, 2, 3, 4};
         System.out.println(Arrays.toString(solution(nums, 5)));
     }
