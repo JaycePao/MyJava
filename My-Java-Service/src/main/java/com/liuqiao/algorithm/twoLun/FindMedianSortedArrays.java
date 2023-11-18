@@ -1,4 +1,4 @@
-package com.liuqiao.algorithm;
+package com.liuqiao.algorithm.twoLun;
 
 public class FindMedianSortedArrays {
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
@@ -57,6 +57,7 @@ public class FindMedianSortedArrays {
             }
         }
     }
+
 
     public static void main(String[] args) {
         int[] arr1 = {1, 2, 5};

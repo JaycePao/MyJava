@@ -1,4 +1,4 @@
-package com.liuqiao.algorithm;
+package com.liuqiao.algorithm.twoLun;
 
 /**
  * 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
@@ -24,7 +24,7 @@ package com.liuqiao.algorithm;
  * @since  2023-04-08
  */
 public class LengthOfLongestSubstring {
-    public static int lengthOfLongestSubstring(String s) {
+    public static int solution(String s) {
         // 记录字符上一次出现的位置
         int[] last = new int[128];
         for(int i = 0; i < 128; i++) {
@@ -45,7 +45,7 @@ public class LengthOfLongestSubstring {
     }
 
     public static void main(String[] args) {
-        int result = lengthOfLongestSubstring("abcabc");
+        int result = solution("abcabcbb");
         System.out.println(result);
     }
 }

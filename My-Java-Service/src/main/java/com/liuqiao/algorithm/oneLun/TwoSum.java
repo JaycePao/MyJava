@@ -1,4 +1,4 @@
-package com.liuqiao.algorithm;
+package com.liuqiao.algorithm.oneLun;
 
 import java.util.Arrays;
 import java.util.HashMap;
