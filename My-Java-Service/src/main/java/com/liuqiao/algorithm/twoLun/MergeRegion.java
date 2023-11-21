@@ -46,6 +46,6 @@ public class MergeRegion {
         System.out.println(intervals[0][1]);
 
 
-        System.out.println(merge(intervals));
+        System.out.println(Arrays.toString(merge(intervals)));
     }
 }
