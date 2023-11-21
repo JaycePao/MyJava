@@ -43,9 +43,17 @@ public class MergeRegion {
         int[] intArr4 = new int[]{15,18};
 
         int[][] intervals = new int[][]{intArr1, intArr2, intArr3, intArr4};
-        System.out.println(intervals[0][1]);
+//        System.out.println(intervals[0][1]);
 
+        int[][] mergeInt = merge(intervals);
 
-        System.out.println(Arrays.toString(merge(intervals)));
+        for (int i=0; i< mergeInt.length; i++) {
+            for (int j=0; j<mergeInt[i].length; j++) {
+                System.out.print(mergeInt[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+//        System.out.println(Arrays.toString(merge(intervals)));
     }
 }
