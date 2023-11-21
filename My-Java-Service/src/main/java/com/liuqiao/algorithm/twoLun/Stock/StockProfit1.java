@@ -1,5 +1,8 @@
-package com.liuqiao.algorithm.Stock;
+package com.liuqiao.algorithm.twoLun.Stock;
 
+/**
+ * letcode 121
+ */
 public class StockProfit1 {
     public int maxProfit(int[] prices) {
         int[][] dp = new int[prices.length][2];

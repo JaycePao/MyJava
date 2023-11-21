@@ -1,10 +1,13 @@
-package com.liuqiao.algorithm;
+package com.liuqiao.algorithm.twoLun;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * letcode 56
+ */
 public class MergeRegion {
 
     public static int[][] merge(int[][] intervals) {

@@ -1,7 +1,10 @@
-package com.liuqiao.algorithm;
+package com.liuqiao.algorithm.twoLun;
 
 import java.util.Arrays;
 
+/**
+ * letcode 378
+ */
 public class KthSmallest {
     public static int kthSmallest(int[][] matrix, int k) {
         int rows = matrix.length, columns = matrix[0].length;

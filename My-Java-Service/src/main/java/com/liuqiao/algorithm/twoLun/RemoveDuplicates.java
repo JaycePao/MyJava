@@ -1,5 +1,8 @@
-package com.liuqiao.algorithm;
+package com.liuqiao.algorithm.twoLun;
 
+/**
+ * letcode 26
+ */
 public class RemoveDuplicates {
     public static int removeDuplicates(int[] nums) {
         if(nums.length==0) return 0;
