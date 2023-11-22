@@ -4,28 +4,28 @@ import java.util.Arrays;
 
 /**
  * letcode 378
+ * 有限矩阵中第k小的元素
  */
 public class KthSmallest {
-    public static int kthSmallest(int[][] matrix, int k) {
-        int rows = matrix.length, columns = matrix[0].length;
-        int[] sorted = new int[rows * columns];
+    public static int solution(int[][] matrix, int k) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[] sorted = new int[m * n];
         int index = 0;
-
-        //将二维数组另存为为一维数组
-        for (int[] row : matrix) {
-            for (int num : row) {
-                sorted[index++] = num;
+        for (int[] intArr : matrix) {
+            for (int item : intArr) {
+                sorted[index] = item;
+                index++;
             }
         }
-        //排序
-        Arrays.sort(sorted);
 
+        Arrays.sort(sorted);
         return sorted[k - 1];
     }
 
     public static void main(String[] args) {
-        int[][] matrix = {{1,5,9},{10,11,13},{12,13,15}};
-        int result = kthSmallest(matrix, 6);
+        int[][] matrix = new int[][]{{1, 5, 9}, {10, 11, 13}, {12, 13, 15}};
+        int result = solution(matrix, 6);
         System.out.println(result);
     }
 }
