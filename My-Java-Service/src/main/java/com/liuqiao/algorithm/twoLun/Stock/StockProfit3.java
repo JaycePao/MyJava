@@ -2,29 +2,31 @@ package com.liuqiao.algorithm.twoLun.Stock;
 
 /**
  * letcode 123
+ * 两次买卖可以获得的最大利润
+ *
  */
 public class StockProfit3 {
     public int maxProfit(int[] prices) {
         int n = prices.length;
+        int[] leftProFit = new int[n];
+        int[] rightProfit = new int[n];
 
-        // f[i]表示以i为分界点，左半段交易一次的最大金额
-        int[] f = new int[n+1];
-        for(int i = 1,minp = Integer.MAX_VALUE; i <= n;i++){
-            // 当前价格减去左半段中的价格最小值为这天能赚的做多的利润
-            f[i] = Math.max(f[i-1],prices[i-1]-minp);
-            // 保存左半段中的价格最小值
-            minp = Math.min(minp,prices[i-1]);
+        for (int i = 1, minPrice = prices[0]; i < n; i++) {
+            leftProFit[i] = Math.max(leftProFit[i - 1], prices[i] - minPrice);
+            minPrice = Math.min(minPrice, prices[i]);
         }
 
-        // 遍历整个数组，以i为分界点，在遍历时计算右半段的最大值，并根据f[i]求出答案
-        int res = 0;
-        // maxp为右半段的价格最大值
-        for(int i = n,maxp = 0;i >= 1;i--){
-            // 右半段的价格最大值减去当天的价格为右半段一次交易能获得的最大利润
-            res = Math.max(res,maxp - prices[i - 1] + f[i - 1]);
-            maxp = Math.max(maxp,prices[i - 1]);
+        for (int i = n - 2, maxPrice = prices[n - 1]; i >= 0; i--) {
+            rightProfit[i] = Math.max(rightProfit[i+1], maxPrice - prices[i]);
+            maxPrice = Math.max(maxPrice, prices[i]);
         }
-        return res;
+
+        int result = 0;
+        for (int i=0; i<n; i++) {
+            result = Math.max(result, leftProFit[i] + rightProfit[i]);
+        }
+
+        return result;
     }
 
 

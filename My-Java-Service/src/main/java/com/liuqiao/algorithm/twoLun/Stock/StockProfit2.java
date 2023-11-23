@@ -2,6 +2,7 @@ package com.liuqiao.algorithm.twoLun.Stock;
 
 /**
  * letcode 122
+ * 买卖多次收获的最大利润 ，贪心算法
  */
 public class StockProfit2 {
     public static int solution(int[] prices) {
