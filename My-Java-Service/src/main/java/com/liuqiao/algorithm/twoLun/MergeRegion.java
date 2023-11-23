@@ -14,22 +14,17 @@ public class MergeRegion {
         if(intervals.length == 0) {
             return new int[0][2];
         }
-
-        Arrays.sort(intervals, new Comparator<int[]>() {
-            public int compare(int[] interval1, int[] interval2) {
-                return interval1[0] - interval2[0];
-            }
-        });
+        Arrays.sort(intervals, Comparator.comparingInt(interval -> interval[0]));
 
         List<int[]> merged = new ArrayList<>();
 
         for (int i=0; i<intervals.length; i++) {
-            int L = intervals[i][0];
-            int R = intervals[i][1];
-            if (merged.size() == 0 || merged.get(merged.size() - 1)[1] < L) {
-                merged.add(new int[]{L,R});
+            int left = intervals[i][0];
+            int right = intervals[i][1];
+            if (merged.size() == 0 || merged.get(merged.size() - 1)[1] < left) {
+                merged.add(new int[]{left,right});
             } else {
-                merged.get(merged.size()-1)[1] = Math.max(merged.get(merged.size() -1)[1], R);
+                merged.get(merged.size()-1)[1] = Math.max(merged.get(merged.size() -1)[1], right);
             }
         }
 
@@ -41,11 +36,9 @@ public class MergeRegion {
         int[] intArr2 = new int[]{2,6};
         int[] intArr3 = new int[]{8,10};
         int[] intArr4 = new int[]{15,18};
-
-        int[][] intervals = new int[][]{intArr1, intArr2, intArr3, intArr4};
-//        System.out.println(intervals[0][1]);
-
+        int[][] intervals = new int[][]{intArr4, intArr2, intArr3, intArr1};
         int[][] mergeInt = merge(intervals);
+
 
         for (int i=0; i< mergeInt.length; i++) {
             for (int j=0; j<mergeInt[i].length; j++) {
@@ -53,7 +46,5 @@ public class MergeRegion {
             }
             System.out.println();
         }
-
-//        System.out.println(Arrays.toString(merge(intervals)));
     }
 }
