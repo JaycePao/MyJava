@@ -12,7 +12,7 @@ public class MyAtoi {
         if(!matcher.find()) return 0;
         String res = matcher.group();
         try {
-            return Integer.valueOf(res);
+            return Integer.parseInt(res);
         }catch (Exception e) {
             if(res.charAt(0) == '-') return Integer.MIN_VALUE;
             return Integer.MAX_VALUE;

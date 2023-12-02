@@ -1,7 +1,5 @@
 package com.liuqiao.algorithm.sanlun;
 
-import java.lang.reflect.Array;
-
 public class RemoveNthFromEnd {
     public static ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy = new ListNode(0, head);
@@ -22,9 +20,6 @@ public class RemoveNthFromEnd {
     public static class ListNode {
         int val;
         ListNode next;
-
-        ListNode() {
-        }
 
         ListNode(int val) {
             this.val = val;
