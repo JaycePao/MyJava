@@ -37,5 +37,7 @@ public class RemoveNthFromEnd {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         System.out.println(removeNthFromEnd(head, 2).next.next.val);
+
+        Thread.dumpStack();
     }
 }
